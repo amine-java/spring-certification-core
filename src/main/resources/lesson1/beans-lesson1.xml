@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Dummy Service -->
+	<bean id="lessonService" class="com.mbh.lesson1.DummyService" init-method="initMethod" destroy-method="destroyMethod">
+		<property name="name" value="Spring Pivotal" />
+	</bean>
+
+	<!-- i18n config  -->
+  <bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basenames">
+      <list>
+        <value>lesson1/messages</value>
+      </list>
+    </property>
+  </bean>
+  
+</beans>
