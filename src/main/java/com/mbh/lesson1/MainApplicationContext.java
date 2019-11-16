@@ -24,7 +24,7 @@ public class MainApplicationContext {
      */
     ApplicationContext applicationContext =
         new ClassPathXmlApplicationContext("lesson1/beans-lesson1.xml");
-    DummyService dummyService = (DummyService) applicationContext.getBean("lessonService");
+    DummyService dummyService = (DummyService) applicationContext.getBean("dummyService");
     dummyService.print();
 
     /**
