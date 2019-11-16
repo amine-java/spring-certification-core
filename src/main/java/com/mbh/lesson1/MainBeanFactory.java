@@ -24,8 +24,8 @@ public class MainBeanFactory {
      */
     ClassPathResource resource = new ClassPathResource("lesson1/beans-lesson1.xml");
     BeanFactory beanFactory = new XmlBeanFactory(resource);
-    DummyService lessonService = (DummyService) beanFactory.getBean("lessonService");
-    lessonService.print();
+    DummyService dummyService = (DummyService) beanFactory.getBean("lessonService");
+    dummyService.print();
   }
 
 }

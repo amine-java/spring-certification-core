@@ -24,8 +24,8 @@ public class MainApplicationContext {
      */
     ApplicationContext applicationContext =
         new ClassPathXmlApplicationContext("lesson1/beans-lesson1.xml");
-    DummyService lessonService2 = (DummyService) applicationContext.getBean("lessonService");
-    lessonService2.print();
+    DummyService dummyService = (DummyService) applicationContext.getBean("lessonService");
+    dummyService.print();
 
     /**
      * With ApplicationContext we can use i18n

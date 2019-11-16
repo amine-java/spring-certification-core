@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Dummy Service -->
-	<bean id="lessonService" class="com.mbh.lesson1.DummyService" init-method="initMethod" destroy-method="destroyMethod">
+	<bean id="dummyService" class="com.mbh.lesson1.DummyService" init-method="initMethod" destroy-method="destroyMethod">
 		<property name="name" value="Spring Pivotal" />
 	</bean>
 
