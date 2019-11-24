@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="springCollection"
+		class="com.mbh.lesson4.SpringCollection">
+
+		<property name="emails">
+			<props>
+				<prop key="admin">admin@hotmail.com</prop>
+				<prop key="manager">manager@hotmail.com</prop>
+			</props>
+		</property>
+
+		<property name="names">
+			<list>
+				<value>John</value>
+				<value>James</value>
+				<value>Fernando</value>
+			</list>
+		</property>
+		
+		<property name="countries">
+			<set>
+				<value>France</value>
+				<value>Spain</value>
+				<value>Germany</value>
+			</set>
+		</property>
+		
+		<property name="elements">
+			<map>
+				<entry key="url1" value="http://dummy.com"></entry>
+				<entry key="url2" value="http://anotherdummy.com"></entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

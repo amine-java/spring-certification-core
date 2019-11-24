@@ -11,6 +11,7 @@ import org.springframework.core.io.ClassPathResource;
  * @author amineboufatah
  *
  */
+
 public class MainBeanFactory {
 
   /**
@@ -24,7 +25,7 @@ public class MainBeanFactory {
      */
     ClassPathResource resource = new ClassPathResource("lesson1/beans-lesson1.xml");
     BeanFactory beanFactory = new XmlBeanFactory(resource);
-    DummyService dummyService = (DummyService) beanFactory.getBean("dummyService");
+    DummyService dummyService = beanFactory.getBean("dummyService", DummyService.class);
     dummyService.print();
   }
 

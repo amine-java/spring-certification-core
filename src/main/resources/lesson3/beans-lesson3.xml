@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean 
+class ="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+<!-- John DOE will be used for the "byName" autowiring -->
+<bean id="employe" class="com.mbh.lesson3.Employe" autowire="byName">
+	<property name="name" value="John DOE"></property>
+</bean>
+
+<bean id="addressByName" class="com.mbh.lesson3.Address">
+	<property name="city" value="NYC"></property>
+</bean>
+
+<!-- End -->
+
+<!-- John FLINT will be used for the "byType" autowiring -->
+<bean id="anotherEmploye" class="com.mbh.lesson3.Employe" autowire="byType">
+	<property name="name" value="John FLINT"></property>
+</bean>
+
+<bean id="addressByType" class="com.mbh.lesson3.Address" primary="true">
+	<property name="city" value="LA"></property>
+</bean>
+
+<!-- End -->
+
+<!-- John FITZ will be used for the "constructor" autowiring -->
+<bean id="anotherEmploye2" class="com.mbh.lesson3.Employe" autowire="constructor">
+	<property name="name" value="John FITZ"></property>
+</bean>
+
+<!-- End -->
+
+
+</beans>

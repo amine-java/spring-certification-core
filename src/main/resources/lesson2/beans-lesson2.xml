@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userService"
+		name="myUserService myOtherUserServiceName;andAnotherOne"
+		class="com.mbh.lesson2.UserService">
+		<property name="userDao" ref="myUserDao"></property>
+	</bean>
+
+	<bean id="userDao" name="myUserDao"
+		class="com.mbh.lesson2.UserDao" />
+
+	<alias name="myUserService" alias="aliasUserService" />
+
+
+	<bean id="userFactory" class="com.mbh.lesson2.UserFactory"></bean>
+
+	<bean id="userServiceUsingFactory" factory-bean="userFactory"
+		factory-method="createUserService">
+		<property name="userDao" ref="userDaoUsingFactory"></property>
+
+	</bean>
+
+	<bean id="userDaoUsingFactory" factory-bean="userFactory"
+		factory-method="createUserDao"></bean>
+		
+<bean id="anotherUserService"
+		class="com.mbh.lesson2.AnotherUserService">
+	<constructor-arg 
+	name="userDao" ref="userDao"></constructor-arg>
+	</bean></beans>
